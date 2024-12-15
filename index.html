@@ -49,9 +49,20 @@
         <section class="gallery">
             <h3>Our "Fine" Selection</h3>
             <div class="carousel-container" id="gallery-carousel">
-                <img src="https://via.placeholder.com/300x200?text=Card+1" alt="Card 1">
-                <img src="https://via.placeholder.com/300x200?text=Card+2" alt="Card 2">
-                <img src="https://via.placeholder.com/300x200?text=Card+3" alt="Card 3">
+                <div class="carousel-track">
+                    <img src="images/cards/card1.png" 
+                         alt="Sarcastic Birthday Card - 'Another Year Older'"
+                         loading="lazy">
+                    <img src="images/cards/card2.png" 
+                         alt="Sympathy Card - 'Well, That Happened'"
+                         loading="lazy">
+                    <img src="images/cards/card3.png" 
+                         alt="Anniversary Card - 'Still Tolerating Each Other'"
+                         loading="lazy">
+                </div>
+                <button class="carousel-button prev" aria-label="Previous slide">❮</button>
+                <button class="carousel-button next" aria-label="Next slide">❯</button>
+                <div class="carousel-indicators"></div>
             </div>
         </section>
 
@@ -59,9 +70,14 @@
         <section class="reviews">
             <h3>What Our Customers Say</h3>
             <div class="carousel-container" id="reviews-carousel">
-                <img src="https://via.placeholder.com/300x200?text=Review+1" alt="Review 1">
-                <img src="https://via.placeholder.com/300x200?text=Review+2" alt="Review 2">
-                <img src="https://via.placeholder.com/300x200?text=Review+3" alt="Review 3">
+                <div class="carousel-track">
+                    <img src="https://via.placeholder.com/300x200?text=Review+1" alt="Review 1">
+                    <img src="https://via.placeholder.com/300x200?text=Review+2" alt="Review 2">
+                    <img src="https://via.placeholder.com/300x200?text=Review+3" alt="Review 3">
+                </div>
+                <button class="carousel-button prev" aria-label="Previous slide">❮</button>
+                <button class="carousel-button next" aria-label="Next slide">❯</button>
+                <div class="carousel-indicators"></div>
             </div>
         </section>
         
@@ -120,11 +136,11 @@
         <section class="transition-section full-width" id="transition-section">
             <!-- At the bottom of this gradient is our final CTA, initially invisible -->
             <div class="final-cta" id="final-cta">
-                <h3>Why are you here?</h3>
+                <h3>Well, so? <br>Why are you here?</h3>
                 <div class="cta-options">
-                    <a href="shop.html">Shop</a>
-                    <a href="injuries.html">Injuries</a>
-                    <a href="about.html">About Us</a>
+                    <a href="shop.html">I'd like to buy a card.</a>
+                    <a href="injuries.html">There's been an accident.</a>
+                    <a href="about.html">I want to meet Bodgeman.</a>
                 </div>
             </div>
             <!-- Sentinel element to trigger the CTA fade-in -->
