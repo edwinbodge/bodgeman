@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple Hello World webpage">
-    <meta name="author" content="Your Name">
-    <title>Bodgeman Cards</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        h1 {
-            margin-top: 20%;
-            font-size: 3rem;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bodgeman Cards</title>
+<link rel="stylesheet" href="css/style.css" />
+<script defer src="js/main.js"></script>
 </head>
 <body>
-    <h1>Bodgeman Cards</h1>
-    <p>Prepare to be disappointed</p>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Bodgeman</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="injuries.html">Injuries</a></li>
+                    <li><a href="lawsuit.html">Lawsuit</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="injuries.html">Injuries</a></li>
+                <li><a href="lawsuit.html">Lawsuit</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Bodgeman Cards</h1>
+            <h2>Disappointing celebrations for over 60 years.</h2>
+        </section>
+
+        <!-- Reviews Carousel -->
+        <section class="reviews">
+            <h3>What Our Customers Say</h3>
+            <div class="carousel-container" id="reviews-carousel">
+                <img src="https://via.placeholder.com/300x200?text=Review+1" alt="Review 1">
+                <img src="https://via.placeholder.com/300x200?text=Review+2" alt="Review 2">
+                <img src="https://via.placeholder.com/300x200?text=Review+3" alt="Review 3">
+            </div>
+        </section>
+
+        <!-- Gallery Carousel -->
+        <section class="gallery">
+            <h3>Our "Fine" Selection</h3>
+            <div class="carousel-container" id="gallery-carousel">
+                <img src="https://via.placeholder.com/300x200?text=Card+1" alt="Card 1">
+                <img src="https://via.placeholder.com/300x200?text=Card+2" alt="Card 2">
+                <img src="https://via.placeholder.com/300x200?text=Card+3" alt="Card 3">
+            </div>
+        </section>
+
+        <!-- Disclaimers Section -->
+        <section class="disclaimers">
+            <h3>Disclaimers</h3>
+            <p>
+                This product is not guaranteed to bring joy, happiness, or resolve familial tensions. Bodgeman Cards takes no responsibility for any emotional, physical, or metaphysical harm caused by receiving or handling our cards. By purchasing our products, you agree not to hold us liable for any injuries, losses, damages, or existential dread. The materials used may be substandard, the ink may fade, and in some instances, the card may spontaneously combust. This is an extreme rarity and most likely just a rumor started by competitors. Results may vary. Terms subject to change at any time, especially when you are not looking. We are not responsible for your decision-making, your life choices, or the circumstances that led you to read this absurdly long disclaimer. Please recycle responsibly, though we cannot guarantee these cards are recyclable. Consult a lawyer before purchasing, gifting, or even thinking about Bodgeman Cards. We disclaim everything we can possibly disclaim to the fullest extent permitted by law. By scrolling this far, you acknowledge all these disclaimers and waive any and all potential claims you might have had, now or in the future, to a satisfactory greeting card experience.
+            </p>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <h3>Why are you here?</h3>
+            <div class="cta-options">
+                <a href="shop.html">Shop</a>
+                <a href="injuries.html">Injuries</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Bodgeman Cards</p>
+    </footer>
 </body>
 </html>

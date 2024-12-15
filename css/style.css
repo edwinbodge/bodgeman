@@ -1,0 +1,247 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                 Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+                 sans-serif;
+    color: #000;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Header and Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75em 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1em;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 0.5em;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: #555;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    width: 24px;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: #000;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+.mobile-menu li {
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #eee;
+}
+.mobile-menu a:hover {
+    background: #f9f9f9;
+    color: #333;
+}
+
+@media (max-width: 800px) {
+    .main-nav {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 8em 1em 6em;
+    background: #f9f9f9;
+}
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+.hero h2 {
+    margin-top: 0.5em;
+    color: #555;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+/* Section Styling */
+section {
+    padding: 4em 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h3 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 300px;
+    margin: 1em auto;
+    text-align: center;
+}
+
+.carousel-container img {
+    width: 100%;
+    position: absolute;
+    top:0; left:0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.carousel-container img.active {
+    opacity: 1;
+}
+
+/* Disclaimers */
+.disclaimers p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    color: #555;
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 1em;
+    background: #fefefe;
+}
+
+/* Final CTA */
+.final-cta {
+    text-align: center;
+}
+.final-cta h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.cta-options a {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.75em 1.5em;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+.cta-options a:hover {
+    background: #333;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2em 1em;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* When mobile menu is active */
+.mobile-menu.active {
+    display: block;
+}
+
+/* Hamburger Animation When Active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
