@@ -45,7 +45,7 @@
             <h2>Disappointing celebrations for over 60 years.</h2>
         </section>
 
-        <!-- Reviews Section (white background) -->
+        <!-- Reviews Section -->
         <section class="reviews">
             <h3>What Our Customers Say</h3>
             <div class="carousel-container" id="reviews-carousel">
@@ -54,6 +54,13 @@
                 <img src="https://via.placeholder.com/300x200?text=Review+3" alt="Review 3">
             </div>
         </section>
+
+        <!-- Upward Arch Divider (Black) -->
+        <div class="section-divider divider-up">
+            <svg width="100%" height="100px" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,20 Q50,0 100,20 L100,100 L0,100 Z" fill="#000"/>
+            </svg>
+        </div>
 
         <!-- Gallery Section (Black Background) -->
         <section class="gallery">
@@ -65,7 +72,14 @@
             </div>
         </section>
 
-        <!-- Disclaimers Section with Sticky Heading -->
+        <!-- Downward Arch Divider (White) -->
+        <div class="section-divider divider-down">
+            <svg width="100%" height="100px" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,0 Q50,20 100,0 L100,-100 L0,-100 Z" fill="#fff"/>
+            </svg>
+        </div>
+
+        <!-- Disclaimers Section (White Background) -->
         <section class="disclaimers" id="disclaimers-section">
             <h3 class="sticky-title">Disclaimers</h3>
             <p>
@@ -125,14 +139,20 @@
             </p>
         </section>
 
-        <!-- Final CTA Section: Fade-in after disclaimers -->
-        <section class="final-cta" id="final-cta">
-            <h3>Why are you here?</h3>
-            <div class="cta-options">
-                <a href="shop.html">Shop</a>
-                <a href="injuries.html">Injuries</a>
-                <a href="about.html">About Us</a>
+        <!-- Transition Gradient Section -->
+        <!-- This large section gives a long scroll transitioning from white to black -->
+        <section class="transition-section" id="transition-section">
+            <!-- At the bottom of this gradient is our final CTA, initially invisible -->
+            <div class="final-cta" id="final-cta">
+                <h3>Why are you here?</h3>
+                <div class="cta-options">
+                    <a href="shop.html">Shop</a>
+                    <a href="injuries.html">Injuries</a>
+                    <a href="about.html">About Us</a>
+                </div>
             </div>
+            <!-- Sentinel element to trigger the CTA fade-in -->
+            <div id="gradient-end"></div>
         </section>
     </main>
 

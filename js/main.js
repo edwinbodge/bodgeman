@@ -34,26 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryImages[0].classList.add('active');
     setInterval(showNextGalleryImage, 3000);
 
-    // Fade-in final CTA after disclaimers
-    const disclaimersSection = document.getElementById('disclaimers-section');
+    // Observe the gradient-end sentinel for final CTA fade-in
     const finalCTA = document.getElementById('final-cta');
-
-    // We want to show final CTA once disclaimers are scrolled past.
-    // Let's observe when disclaimers section is leaving the viewport.
-    const options = {
-        root: null,
-        threshold: 0
-    };
+    const gradientEnd = document.getElementById('gradient-end');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                // If disclaimers section no longer intersects (we've scrolled past it),
-                // show the final CTA.
+            if (entry.isIntersecting) {
                 finalCTA.classList.add('visible');
             }
         });
-    }, options);
+    }, { threshold: 0 });
 
-    observer.observe(disclaimersSection);
+    observer.observe(gradientEnd);
 });
