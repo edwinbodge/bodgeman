@@ -33,4 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     galleryImages[0].classList.add('active');
     setInterval(showNextGalleryImage, 3000);
+
+    // Fade-in final CTA after disclaimers
+    const disclaimersSection = document.getElementById('disclaimers-section');
+    const finalCTA = document.getElementById('final-cta');
+
+    // We want to show final CTA once disclaimers are scrolled past.
+    // Let's observe when disclaimers section is leaving the viewport.
+    const options = {
+        root: null,
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                // If disclaimers section no longer intersects (we've scrolled past it),
+                // show the final CTA.
+                finalCTA.classList.add('visible');
+            }
+        });
+    }, options);
+
+    observer.observe(disclaimersSection);
 });
