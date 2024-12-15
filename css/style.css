@@ -216,13 +216,11 @@ section.full-width {
 
 /* Gallery Section (Black Background) */
 .gallery {
-    background: #000;
-    color: #fff;
     position: relative;
     padding: 4em 1em;
 }
 .gallery h3 {
-    color: #fff;
+    
 }
 
 /* Disclaimers Section with Sticky Title */
