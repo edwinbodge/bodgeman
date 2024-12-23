@@ -138,6 +138,7 @@ body {
 .hero .hero-image {
     display: block;
     margin: 0 auto 1.5em;
+    max-width: 200px;
 }
 .hero h1 {
     margin: 0;
@@ -276,7 +277,7 @@ section.full-width {
 .gallery {
     position: relative;
     padding: 8em 1em;
-    margin-top: 6em;
+    /* margin-top: 6em; */
 }
 
 /* Disclaimers Section with Sticky Title */
@@ -299,7 +300,9 @@ section.full-width {
     font-size: 1.8em;
     font-weight: 600;
     z-index: 10; 
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+    /* Add white drop shadow */
 }
 .disclaimers p {
     font-size: 0.9em;
@@ -321,7 +324,9 @@ section.full-width {
     font-size: 1.8em;
     font-weight: 600;
     z-index: 10; 
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+        /* Add white drop shadow */
 }
 
 /* Transition Gradient Section */
@@ -430,7 +435,9 @@ section.full-width {
     font-size: 1.8em;
     font-weight: 600;
     z-index: 10; 
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+        /* Add white drop shadow */
 }
 
 .gallery .image-list,
@@ -453,4 +460,14 @@ section.full-width {
     .reviews .image-list img {
         width: 80%; /* 80% width for mobile */
     }
+}
+
+/* Add this CSS */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
 }
