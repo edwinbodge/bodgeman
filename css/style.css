@@ -471,3 +471,22 @@ section.full-width {
 .fade-in.visible {
     opacity: 1;
 }
+
+button {
+    background-color: #272727; /* Example primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000; /* Darker shade for hover effect */
+}
+
+button:active {
+    background-color: #000000; /* Even darker shade for active effect */
+}

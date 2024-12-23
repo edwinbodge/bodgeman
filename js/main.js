@@ -55,4 +55,37 @@ document.addEventListener('DOMContentLoaded', function() {
         image.classList.add('fade-in');
         imageObserver.observe(image);
     });
+
+    const button = document.getElementById('lawsuit-button');
+    let speed = 0;
+    let directionX = 1;
+    let directionY = 1;
+    let posX = 0;
+    let posY = 0;
+
+    const moveButton = () => {
+        const buttonRect = button.getBoundingClientRect();
+        const containerRect = document.body.getBoundingClientRect();
+
+        // Check for collision with container boundaries
+        if (buttonRect.right >= containerRect.right || buttonRect.left <= containerRect.left) {
+            directionX *= -1;
+        }
+        if (buttonRect.bottom >= containerRect.bottom || buttonRect.top <= containerRect.top) {
+            directionY *= -1;
+        }
+
+        // Update position
+        posX += directionX * speed;
+        posY += directionY * speed;
+
+        // Apply new position
+        button.style.transform = `translate(${posX}px, ${posY}px)`;
+    };
+
+    button.addEventListener('click', () => {
+        speed += 3; // Increase speed on each click
+    });
+
+    setInterval(moveButton, 20); // Move the button every 20ms
 });
