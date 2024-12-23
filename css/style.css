@@ -307,7 +307,22 @@ section.full-width {
     color: #555;
 }
 
-
+/* Apply the same styles to gallery and reviews headers */
+.gallery .sticky-title,
+.reviews .sticky-title {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1px; /* Adjust this based on your header's actual height */
+    background: #fff;
+    padding: 1em 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+    z-index: 10; 
+    border-bottom: 1px solid #ddd;
+}
 
 /* Transition Gradient Section */
 .transition-section {
@@ -402,4 +417,40 @@ section.full-width {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.gallery h3,
+.reviews h3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1px; /* Adjust this based on your header's actual height */
+    background: #fff;
+    padding: 1em 0;
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+    z-index: 10; 
+    border-bottom: 1px solid #ddd;
+}
+
+.gallery .image-list,
+.reviews .image-list {
+    display: block;
+}
+
+.gallery .image-list img,
+.reviews .image-list img {
+    width: 100%;
+    max-width: 500px; /* Maximum width for desktop */
+    margin-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 800px) {
+    .gallery .image-list img,
+    .reviews .image-list img {
+        width: 80%; /* 80% width for mobile */
+    }
 }
