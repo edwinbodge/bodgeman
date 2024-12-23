@@ -62,30 +62,115 @@ document.addEventListener('DOMContentLoaded', function() {
     let directionY = 1;
     let posX = 0;
     let posY = 0;
+    let clickCount = 0; // Track the number of clicks
 
-    const moveButton = () => {
-        const buttonRect = button.getBoundingClientRect();
-        const containerRect = document.body.getBoundingClientRect();
+    if (button) {
+        const moveButton = () => {
+            const buttonRect = button.getBoundingClientRect();
+            const containerRect = document.body.getBoundingClientRect();
 
-        // Check for collision with container boundaries
-        if (buttonRect.right >= containerRect.right || buttonRect.left <= containerRect.left) {
-            directionX *= -1;
-        }
-        if (buttonRect.bottom >= containerRect.bottom || buttonRect.top <= containerRect.top) {
-            directionY *= -1;
-        }
+            // Check for collision with container boundaries
+            if (buttonRect.right >= containerRect.right || buttonRect.left <= containerRect.left) {
+                directionX *= -1;
+            }
+            if (buttonRect.bottom >= containerRect.bottom || buttonRect.top <= containerRect.top) {
+                directionY *= -1;
+            }
 
-        // Update position
-        posX += directionX * speed;
-        posY += directionY * speed;
+            // Update position
+            posX += directionX * speed;
+            posY += directionY * speed;
 
-        // Apply new position
-        button.style.transform = `translate(${posX}px, ${posY}px)`;
-    };
+            // Apply new position
+            button.style.transform = `translate(${posX}px, ${posY}px)`;
+        };
 
-    button.addEventListener('click', () => {
-        speed += 3; // Increase speed on each click
-    });
+        button.addEventListener('click', () => {
+                speed += 3; // Increase speed on each click
+                clickCount++; // Increment click count
 
-    setInterval(moveButton, 20); // Move the button every 20ms
+            if (clickCount >= 3) {
+                const heading = document.querySelector('main section h2');
+                if (heading) {
+                    heading.textContent = "Oh, sorry about that.";
+                }
+
+                const paragraph = document.querySelector('main section + section p');
+                if (paragraph) {
+                    paragraph.textContent = "Our intern has been fired for this. We're sorry.";
+                }
+
+                const button = document.getElementById('lawsuit-button');
+                if (button) {
+                    button.textContent = "Submit a Complaint";
+                    speed = 1;
+
+                    button.addEventListener('click', () => {
+                        window.location.href = 'actual_lawsuit.html'; // Redirect to the new page
+                    });
+                }
+            }
+        });
+
+        setInterval(moveButton, 20); // Move the button every 20ms
+    }
+
+    const tapButton = document.getElementById('tap-button');
+    let count = 1000000;
+
+    if(tapButton) {
+        tapButton.addEventListener('click', () => {
+            if (count === 999990) {
+                alert("Do you really think you'll get to a million?");
+            }
+            if (count > 0) {
+                count--;
+                tapButton.textContent = `Taps remaining: ${count}`;
+            } else {
+                tapButton.textContent = "There's been an error, please try again.";
+                count = 1000000;
+            }
+            console.log(count);
+        });
+    }
+
+    const rpsButton = document.getElementById('rps-button');
+
+    if (rpsButton) {
+        rpsButton.addEventListener('click', () => {
+            // Hide the original button
+            rpsButton.style.display = 'none';
+
+            // Create the rock, paper, scissors buttons
+            const options = ['Rock', 'Paper', 'Scissors'];
+            const section = rpsButton.parentElement;
+
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.id = `${option.toLowerCase()}-button`;
+                button.classList.add('rps-option');
+                section.appendChild(button);
+
+                button.addEventListener('click', () => {
+                    let message;
+                    switch (option) {
+                        case 'Rock':
+                            message = 'Paper, try again.';
+                            break;
+                        case 'Paper':
+                            message = 'Scissors, try again.';
+                            break;
+                        case 'Scissors':
+                            message = 'Rock, try again.';
+                            break;
+                    }
+                    alert(message);
+                });
+            });
+
+            // Remove the event listener to prevent adding buttons multiple times
+            rpsButton.removeEventListener('click', arguments.callee);
+        });
+    }
 });

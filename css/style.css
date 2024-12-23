@@ -490,3 +490,25 @@ button:hover {
 button:active {
     background-color: #000000; /* Even darker shade for active effect */
 }
+
+#tap-button,
+#chess-button,
+#rps-button {
+    margin-bottom: 20px;
+    width: 250px;
+}
+
+.rps-option {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px; /* Set a max width for consistency */
+    min-width: 150px;
+}
