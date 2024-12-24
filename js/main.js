@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const paragraph = document.querySelector('main section + section p');
                 if (paragraph) {
-                    paragraph.textContent = "Our intern has been fired for this. We're sorry.";
+                    paragraph.textContent = "We've fired our intern. Turns out, our website code is publicly editable. We're very sorry about this experience.";
                 }
 
                 const button = document.getElementById('lawsuit-button');
