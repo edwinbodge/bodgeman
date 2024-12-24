@@ -512,3 +512,9 @@ button:active {
     max-width: 200px; /* Set a max width for consistency */
     min-width: 150px;
 }
+
+#tank-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+}
