@@ -77,6 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 directionY *= -1;
             }
 
+            if(clickCount === 1) {
+                button.textContent = "Can't catch me!";
+            }
+            if (clickCount === 2) {
+                button.textContent = "Faster, faster!";
+            }
+            if (clickCount === 3) {
+                button.textContent = "YEeeeEEeeeEE!";
+            }
+
+
             // Update position
             posX += directionX * speed;
             posY += directionY * speed;
@@ -86,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         button.addEventListener('click', () => {
-                speed += 3; // Increase speed on each click
+                speed += 2; // Increase speed on each click
                 clickCount++; // Increment click count
 
-            if (clickCount >= 3) {
+            if (clickCount >= 4) {
                 const heading = document.querySelector('main section h2');
                 if (heading) {
                     heading.textContent = "Oh, sorry about that.";
@@ -181,6 +192,43 @@ document.addEventListener('DOMContentLoaded', function() {
     if (chessButton) {
         chessButton.addEventListener('click', () => {
             window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+        });
+    }
+
+    const patronButton = document.getElementById('patron-button');
+    const investorButton = document.getElementById('investor-button');
+    const fbiButton = document.getElementById('fbi-button');
+    const bodgemanInfo = document.getElementById('bodgeman-info');
+
+    const updateContent = (imageSrc, headerText, paragraphText) => {
+        bodgemanInfo.innerHTML = `
+            <img src="${imageSrc}" alt="${headerText}" style="max-width: 100%; height: auto;">
+            <h2>${headerText}</h2>
+            <p>${paragraphText}</p>
+        `;
+    };
+
+    if (patronButton) {
+        patronButton.addEventListener('click', () => {
+            updateContent('images/patron.png', 
+                'Thank you for your patronage!', 
+                'Well that\'s about all we have to say ... we\'ve ... never had a real patron before.');
+        });
+    }
+
+    if (investorButton) {
+        investorButton.addEventListener('click', () => {
+            updateContent('images/investor.png', 
+                'Bodgeman can clean up!', 
+                'Not visually -- no way! But financially -- oh, we can do some crazy stuff. Turns out, when you operate with zero spine for a few decades, you can make a lot of money. We\'re not sure what we\'ll do with it, but we\'re sure it\'ll be fun. Please direct all inquiries to our legal department, Calvin.');
+        });
+    }
+
+    if (fbiButton) {
+        fbiButton.addEventListener('click', () => {
+            updateContent('images/fbi.png', 
+                '🦅🦅 Hello sir or madam 🦅🦅',
+                'We appreciate your service, and your interest in our high quality greeting cards. All cards are handmade in the greatest nation on earth, the great United States of America. Please enjoy your stay on our site, and honestly please just close this tab now.');
         });
     }
 });
