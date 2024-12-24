@@ -305,7 +305,7 @@ section.full-width {
     /* Add white drop shadow */
 }
 .disclaimers p {
-    font-size: 0.9em;
+    font-size: 1.2em;
     line-height: 1.5em;
     color: #555;
 }
@@ -456,9 +456,11 @@ section.full-width {
 }
 
 @media (max-width: 800px) {
-    .gallery .image-list img,
-    .reviews .image-list img {
+    .gallery .image-list img {
         width: 80%; /* 80% width for mobile */
+    }
+    .reviews .image-list img {
+        width: 100%; /* 80% width for mobile */
     }
 }
 

@@ -77,13 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 directionY *= -1;
             }
 
-            if(clickCount === 1) {
+            if(clickCount === 2) {
                 button.textContent = "Can't catch me!";
             }
-            if (clickCount === 2) {
+            if (clickCount === 3) {
                 button.textContent = "Faster, faster!";
             }
-            if (clickCount === 3) {
+            if (clickCount === 4) {
                 button.textContent = "YEeeeEEeeeEE!";
             }
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 speed += 2; // Increase speed on each click
                 clickCount++; // Increment click count
 
-            if (clickCount >= 4) {
+            if (clickCount >= 5) {
                 const heading = document.querySelector('main section h2');
                 if (heading) {
                     heading.textContent = "Oh, sorry about that.";
