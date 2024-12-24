@@ -116,12 +116,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const tapButton = document.getElementById('tap-button');
-    let count = 1000000;
+    let count = 1000001;
 
     if(tapButton) {
         tapButton.addEventListener('click', () => {
             if (count === 999990) {
                 alert("Do you really think you'll get to a million?");
+            }
+            if (count === 999960) {
+                alert("Seriously, this is not going to happen.");
             }
             if (count > 0) {
                 count--;
@@ -171,6 +174,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Remove the event listener to prevent adding buttons multiple times
             rpsButton.removeEventListener('click', arguments.callee);
+        });
+    }
+
+    const chessButton = document.getElementById('chess-button');
+    if (chessButton) {
+        chessButton.addEventListener('click', () => {
+            window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
         });
     }
 });
