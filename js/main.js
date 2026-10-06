@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (grid) {
         loadCards().then(cards => {
             const count = document.getElementById('gallery-count');
-            if (count) count.textContent = `${cards.length} cards and counting. Every one a disappointment.`;
+            if (count) count.textContent = 'Hundreds of cards and counting. Every one a disappointment.';
 
             const lightbox = document.getElementById('lightbox');
             const lbImg = document.getElementById('lb-img');
