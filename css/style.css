@@ -473,6 +473,7 @@ button:active {
 
 .image-list img {
     width: 100%;
+    height: auto; /* the width/height attributes are only for reserving space */
     max-width: 500px;
     margin: 0 auto 1em;
     display: block;
