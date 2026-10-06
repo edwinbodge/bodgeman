@@ -73,18 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 [cards[i], cards[j]] = [cards[j], cards[i]];
             }
             cards.slice(0, 3).forEach(card => {
-                const stage = document.createElement('div');
-                stage.className = 'lock-stage';
-                const frame = document.createElement('div');
-                frame.className = 'lock-frame';
                 const img = document.createElement('img');
                 img.src = card.file;
                 img.width = card.w;
                 img.height = card.h;
                 img.alt = 'A Bodgeman greeting card';
-                frame.appendChild(img);
-                stage.appendChild(frame);
-                featured.appendChild(stage);
+                featured.appendChild(img);
             });
             document.getElementById('gallery-link').hidden = false;
             observeImages(featured);

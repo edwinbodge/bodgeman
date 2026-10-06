@@ -458,49 +458,24 @@ button:active {
 }
 
 
-/* ---------- "Locked" scrolling cards (home page) ----------
-   Each card lives in a tall .lock-stage. Inside it, .lock-frame is
-   position: sticky, so the card scrolls in, pins to the centre of the
-   screen while you keep scrolling through the extra stage height, then
-   releases and the next card scrolls up to take its place. */
-:root {
-    --header-h: 54px;
-    --lock-hold: 80vh; /* how much extra scrolling a card stays pinned for */
-}
-
+/* ---------- Home page card lists ---------- */
 .gallery,
 .reviews {
-    padding: 6em 1em 0;
+    position: relative;
+    padding: 8em 1em;
 }
 
-.section-title {
-    text-align: center;
-    margin: 0 0 1.5em;
+.gallery .sticky-title,
+.reviews .sticky-title {
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
-.lock-stage {
-    height: calc(100vh - var(--header-h) + var(--lock-hold));
-    height: calc(100svh - var(--header-h) + var(--lock-hold));
-}
-
-.lock-frame {
-    position: sticky;
-    top: var(--header-h);
-    height: calc(100vh - var(--header-h));
-    height: calc(100svh - var(--header-h));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lock-frame img {
+.image-list img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1em;
     display: block;
-    width: auto;
-    height: auto;
-    max-width: min(500px, 100%);
-    max-height: calc(100vh - var(--header-h) - 3em);
-    max-height: calc(100svh - var(--header-h) - 3em);
-    object-fit: contain;
 }
 
 .gallery-link {
@@ -514,12 +489,9 @@ button:active {
 }
 
 @media (max-width: 800px) {
-    :root { --lock-hold: 60vh; }
-    .gallery, .reviews { padding-top: 4em; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    :root { --lock-hold: 20vh; }
+    .gallery .image-list img {
+        width: 80%;
+    }
 }
 
 /* ---------- Gallery page ---------- */
