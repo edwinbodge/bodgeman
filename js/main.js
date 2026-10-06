@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
         investorButton.addEventListener('click', () => {
             updateContent('images/investor.png', 
                 'Bodgeman can clean up!', 
-                'Not visually -- no way! But financially -- oh, we can do some crazy stuff. Turns out, when you operate with zero spine for a few decades, you can make a lot of money. We\'re not sure what we\'ll do with it, but we\'re sure it\'ll be fun. Please direct all inquiries to our legal department, Calvin.');
+                'Not visually -- no way! But financially -- oh, we can do some crazy stuff. Turns out, when you operate with zero spine for a few decades, you can make a lot of money. We\'re not sure what we\'ll do with it, but we\'re sure it\'ll be fun. Please direct all inquiries to our legal department, Calvin (RIP).');
         });
     }
 
