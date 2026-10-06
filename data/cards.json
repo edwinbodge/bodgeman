@@ -1,0 +1,109 @@
+{
+  "cards": [
+    {
+      "id": "card15",
+      "file": "images/cards/card15.webp",
+      "thumb": "images/cards/thumbs/card15.webp",
+      "w": 404,
+      "h": 268
+    },
+    {
+      "id": "card14",
+      "file": "images/cards/card14.webp",
+      "thumb": "images/cards/thumbs/card14.webp",
+      "w": 423,
+      "h": 529
+    },
+    {
+      "id": "card13",
+      "file": "images/cards/card13.webp",
+      "thumb": "images/cards/thumbs/card13.webp",
+      "w": 792,
+      "h": 612
+    },
+    {
+      "id": "card12",
+      "file": "images/cards/card12.webp",
+      "thumb": "images/cards/thumbs/card12.webp",
+      "w": 378,
+      "h": 529
+    },
+    {
+      "id": "card11",
+      "file": "images/cards/card11.webp",
+      "thumb": "images/cards/thumbs/card11.webp",
+      "w": 420,
+      "h": 525
+    },
+    {
+      "id": "card10",
+      "file": "images/cards/card10.webp",
+      "thumb": "images/cards/thumbs/card10.webp",
+      "w": 393,
+      "h": 540
+    },
+    {
+      "id": "card9",
+      "file": "images/cards/card9.webp",
+      "thumb": "images/cards/thumbs/card9.webp",
+      "w": 1038,
+      "h": 1400
+    },
+    {
+      "id": "card8",
+      "file": "images/cards/card8.webp",
+      "thumb": "images/cards/thumbs/card8.webp",
+      "w": 1046,
+      "h": 1400
+    },
+    {
+      "id": "card7",
+      "file": "images/cards/card7.webp",
+      "thumb": "images/cards/thumbs/card7.webp",
+      "w": 1040,
+      "h": 1400
+    },
+    {
+      "id": "card6",
+      "file": "images/cards/card6.webp",
+      "thumb": "images/cards/thumbs/card6.webp",
+      "w": 1037,
+      "h": 1400
+    },
+    {
+      "id": "card5",
+      "file": "images/cards/card5.webp",
+      "thumb": "images/cards/thumbs/card5.webp",
+      "w": 1007,
+      "h": 1400
+    },
+    {
+      "id": "card4",
+      "file": "images/cards/card4.webp",
+      "thumb": "images/cards/thumbs/card4.webp",
+      "w": 1031,
+      "h": 1400
+    },
+    {
+      "id": "card3",
+      "file": "images/cards/card3.webp",
+      "thumb": "images/cards/thumbs/card3.webp",
+      "w": 870,
+      "h": 1206
+    },
+    {
+      "id": "card2",
+      "file": "images/cards/card2.webp",
+      "thumb": "images/cards/thumbs/card2.webp",
+      "w": 1019,
+      "h": 1400
+    },
+    {
+      "id": "card1",
+      "file": "images/cards/card1.webp",
+      "thumb": "images/cards/thumbs/card1.webp",
+      "w": 1027,
+      "h": 1400
+    }
+  ]
+}

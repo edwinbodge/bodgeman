@@ -40,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Final CTA or gradient-end element not found');
     }
 
-    // Fade-in effect for images
-    const images = document.querySelectorAll('img');
+    // Fade-in effect for images (call again for images added later)
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -51,10 +50,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    images.forEach(image => {
-        image.classList.add('fade-in');
-        imageObserver.observe(image);
-    });
+    const observeImages = (root = document) => {
+        root.querySelectorAll('img:not(.fade-in):not(.no-fade)').forEach(image => {
+            image.classList.add('fade-in');
+            imageObserver.observe(image);
+        });
+    };
+    observeImages();
+
+    // Cards come from data/cards.json so new ones appear without editing any HTML
+    const loadCards = () => fetch('data/cards.json', { cache: 'no-cache' })
+        .then(res => res.json())
+        .then(data => data.cards);
+
+    // Home page: three random cards, different on every refresh
+    const featured = document.getElementById('featured-cards');
+    if (featured) {
+        loadCards().then(cards => {
+            // Fisher-Yates shuffle
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
+            cards.slice(0, 3).forEach(card => {
+                const stage = document.createElement('div');
+                stage.className = 'lock-stage';
+                const frame = document.createElement('div');
+                frame.className = 'lock-frame';
+                const img = document.createElement('img');
+                img.src = card.file;
+                img.width = card.w;
+                img.height = card.h;
+                img.alt = 'A Bodgeman greeting card';
+                frame.appendChild(img);
+                stage.appendChild(frame);
+                featured.appendChild(stage);
+            });
+            document.getElementById('gallery-link').hidden = false;
+            observeImages(featured);
+        }).catch(err => console.error('Could not load cards', err));
+    }
+
+    // Gallery page: every card, with a simple lightbox
+    const grid = document.getElementById('card-grid');
+    if (grid) {
+        loadCards().then(cards => {
+            const count = document.getElementById('gallery-count');
+            if (count) count.textContent = `${cards.length} cards and counting. Every one a disappointment.`;
+
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            let current = 0;
+            const show = (i) => {
+                current = (i + cards.length) % cards.length;
+                lbImg.src = cards[current].file;
+                lightbox.classList.add('open');
+            };
+            const close = () => lightbox.classList.remove('open');
+
+            cards.forEach((card, i) => {
+                const tile = document.createElement('button');
+                tile.className = 'card-tile';
+                tile.setAttribute('aria-label', `View card ${i + 1} of ${cards.length}`);
+                const img = document.createElement('img');
+                img.src = card.thumb;
+                img.width = card.w;
+                img.height = card.h;
+                img.alt = 'A Bodgeman greeting card';
+                img.loading = 'lazy';
+                tile.appendChild(img);
+                tile.addEventListener('click', () => show(i));
+                grid.appendChild(tile);
+            });
+            observeImages(grid);
+
+            document.getElementById('lb-close').addEventListener('click', close);
+            document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
+            document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') show(current - 1);
+                if (e.key === 'ArrowRight') show(current + 1);
+            });
+        }).catch(err => console.error('Could not load cards', err));
+    }
 
     const button = document.getElementById('lawsuit-button');
     let speed = 0;
