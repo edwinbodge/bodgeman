@@ -15,6 +15,7 @@
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="lawsuit.html">Lawsuit</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -29,6 +30,7 @@
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="lawsuit.html">Lawsuit</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
@@ -42,36 +44,22 @@
             <h1>Bodgeman Cards</h1>
             <h2>Providing disappointing celebrations for over 60 years.</h2>
         </section>
-        <!-- Gallery Section (Black Background) -->
+        <!-- Random selection of cards (filled in by js/main.js from data/cards.json) -->
         <section class="gallery">
             <h3 class="sticky-title">Our "Fine" Selection</h3>
-            <div class="image-list">
-                <img src="images/cards/card1.png" loading="lazy">
-                <img src="images/cards/card2.png" loading="lazy">
-                <img src="images/cards/card3.png" loading="lazy">
-                <img src="images/cards/card4.png" loading="lazy">
-                <img src="images/cards/card5.png" loading="lazy">
-                <img src="images/cards/card6.png" loading="lazy">
-                <img src="images/cards/card7.png" loading="lazy">
-                <img src="images/cards/card8.png" loading="lazy">
-                <img src="images/cards/card9.png" loading="lazy">
-                <img src="images/cards/card10.png" loading="lazy">
-                <img src="images/cards/card11.png" loading="lazy">
-                <img src="images/cards/card12.png" loading="lazy">
-                <img src="images/cards/card13.png" loading="lazy">
-                <img src="images/cards/card14.png" loading="lazy">
-                <img src="images/cards/card15.png" loading="lazy">
-            </div>
+            <div class="image-list" id="featured-cards"></div>
+            <noscript><p class="gallery-link"><a href="gallery.html">Browse every card &rarr;</a></p></noscript>
+            <p class="gallery-link" id="gallery-link" hidden><a href="gallery.html">See every card &rarr;</a></p>
         </section>
-        
+
         <!-- Reviews Section -->
         <section class="reviews">
             <h3 class="sticky-title">What Our Customers Say</h3>
             <div class="image-list">
-                <img src="images/reviews/review1.png" alt="Sarcastic Birthday Card - 'Another Year Older'" loading="lazy">
-                <img src="images/reviews/review2.png" alt="Sarcastic Birthday Card - 'Another Year Older'" loading="lazy">
-                <img src="images/reviews/review3.png" alt="Sarcastic Birthday Card - 'Another Year Older'" loading="lazy">
-                <img src="images/reviews/review4.png" alt="Sarcastic Birthday Card - 'Another Year Older'" loading="lazy">
+                <img src="images/reviews/review1.png" alt="Customer review 1" loading="lazy">
+                <img src="images/reviews/review2.png" alt="Customer review 2" loading="lazy">
+                <img src="images/reviews/review3.png" alt="Customer review 3" loading="lazy">
+                <img src="images/reviews/review4.png" alt="Customer review 4" loading="lazy">
             </div>
         </section>
 
@@ -101,7 +89,7 @@
                 <br><br>
                 By continuing to scroll, browse, or even think about Bodgeman Cards, you are giving us your irrevocable consent to
                 disclaim, deny, and track all of your actions. Should any portion of these disclaimers be deemed unenforceable, the rest of
-                them will remain in full force, like an overly caffeinated legal Calvin with a thousand heads and an unlimited supply of
+                them will remain in full force, like an overly caffeinated legal Calvin (RIP) with a thousand heads and an unlimited supply of
                 disclaimers.
 
                 <br><br>
@@ -138,7 +126,7 @@
     </main>
 
     <footer class="site-footer index-footer">
-        <p>&copy; 2024 Bodgeman Cards</p>
+        <p>&copy; <span class="current-year">2024</span> Bodgeman Cards</p>
     </footer>
 </body>
 </html>
