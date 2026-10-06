@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Keep the footer copyright year current
+    document.querySelectorAll('.current-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+
     // Navigation Toggle for Mobile
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
