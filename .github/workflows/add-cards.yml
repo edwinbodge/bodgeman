@@ -1,15 +1,7 @@
 name: Add new cards
 
-# Runs when:
-#  * images are pushed into inbox/ (e.g. uploaded through the GitHub website)
-#  * every 6 hours, to pick up anything dropped in the shared Google Drive folder
-#  * someone clicks "Run workflow" on the Actions tab (publish right now)
+# Manual only: go to the Actions tab -> "Add new cards" -> Run workflow.
 on:
-  push:
-    branches: [main]
-    paths: ['inbox/**']
-  schedule:
-    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:

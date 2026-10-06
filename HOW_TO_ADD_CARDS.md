@@ -4,8 +4,9 @@
 
 1. Open the **Bodgeman Cards** folder in Google Drive (on your phone or computer).
 2. Drag in (or upload) a photo or scan of the new card. JPG, PNG and iPhone photos all work.
-3. That's it. Within about 6 hours the card shows up on the website, in the Gallery
-   (newest first) and in the random selection on the home page.
+3. Let whoever manages the site know. They click **Run workflow** (see below), and a minute or two
+   later the card shows up on the website, in the Gallery (newest first) and in the random selection
+   on the home page.
 
 Tips: crop the photo to just the card first. Several cards at once is fine.
 Deleting a file from Drive later does **not** take it off the website (see below).
@@ -25,14 +26,14 @@ adds them to `data/cards.json`, and commits. GitHub Pages then republishes autom
 3. **Add them to GitHub** (repo → Settings → Secrets and variables → Actions):
    - *Variables* tab → new variable `DRIVE_FOLDER_ID` = the folder ID
    - *Secrets* tab → new secret `DRIVE_API_KEY` = the API key
-4. **Test it.** Drop an image in the Drive folder, then go to the repo's *Actions* tab →
-   "Add new cards" → *Run workflow*. After it finishes, the card should appear on the site within a minute or two.
+4. **Publish new cards.** Whenever there are new images in the Drive folder, go to the repo's *Actions* tab →
+   "Add new cards" → *Run workflow*. After it finishes, the cards appear on the site within a minute or two.
 
 Notes:
-- GitHub pauses scheduled workflows after 60 days with no repo activity. If Dad goes a couple of
-  months without a new card, just click *Run workflow* once to wake it up.
-- No Drive? Anyone with repo access can instead use *Add file → Upload files* to put images into the
-  `inbox/` folder; the same Action processes them on the spot.
+- The workflow is manual on purpose (cards are added rarely). To make it automatic later, add a
+  `schedule:` (cron) trigger to `.github/workflows/add-cards.yml`.
+- No Drive? Anyone with repo access can put images into the `inbox/` folder (*Add file → Upload files*)
+  and run the same workflow.
 
 ## Removing a card
 
